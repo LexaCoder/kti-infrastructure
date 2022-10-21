@@ -3,6 +3,8 @@ services:
   nginx:
     image: "nginx:latest"
     container_name: nginx
+    environment:
+      - TZ=Europe/Moscow
     ports:
       - "80:80"
     volumes: 
@@ -14,6 +16,7 @@ services:
     image: "aquaman/flask:1.0"
     container_name: flask
     environment:
+      - TZ=Europe/Moscow
       - FLASK_DEBUG=True
       - PYTHONUNBUFFERED=True
     volumes:
@@ -28,6 +31,7 @@ services:
     image: "postgres:15.0-alpine"
     container_name: postgres
     environment:
+      - TZ=Europe/Moscow
       - POSTGRES_PASSWORD=Passw0rd!
     ports:
       - "5432:5432"
