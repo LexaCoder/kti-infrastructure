@@ -1,6 +1,5 @@
 .*
 !.gitignore
-/flask_app
 /data
 /html
 /app
